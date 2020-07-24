@@ -7,7 +7,7 @@ import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CommentTwoToneIcon from '@material-ui/icons/CommentTwoTone';
 import SendIcon from '@material-ui/icons/Send';
-import Spinner from "../../components/UI/Spinner/Spinner"
+import Spinner from "../../components/UI/Spinner/Spinner";
 
 class Posts extends Component{
     state = {
@@ -16,7 +16,7 @@ class Posts extends Component{
         id: "",
         index: "",
         commentPosted: false,
-        likeCounter: false,
+        isButtonPushed: false,
         loading: false
     }
 
@@ -45,7 +45,7 @@ class Posts extends Component{
 
 
     likeButtonHandler = (id,index) => {
-        this.setState({likeCounter: true})
+        this.setState({isButtonPushed: true})
         this.setState(prevState => {
             let counter = 0
             if(!prevState.newPost[index][id].data.isLiked){
@@ -63,23 +63,14 @@ class Posts extends Component{
     }
 
     commentButtonHandler = (id,index) => {
-                this.setState(prevState => {
-                    return{
-                        ...prevState,
-                        ...prevState.newPost[index][id].data.isCommented = !prevState.newPost[index][id].data.isCommented
-                    }
-                })
+        this.setState({isButtonPushed: true})
 
-        const updates ={
-            isLiked: this.state.newPost[index][id].data.isLiked,
-            likeCount: this.state.newPost[index][id].data.likeCount,
-            isCommented: !this.state.newPost[index][id].data.isCommented
-        }
-
-        axios.put('https://blog-app-911f4.firebaseio.com/postMaker/' + id + '/data.json', updates)
-        // .then(response => {
-        //     console.log(response);
-        // })
+        this.setState(prevState => {
+            return{
+                ...prevState,
+                ...prevState.newPost[index][id].data.isCommented = !prevState.newPost[index][id].data.isCommented
+            }
+        })
     }
 
     textareaChangeHandler = (event) => {
@@ -107,7 +98,7 @@ class Posts extends Component{
         const id= this.state.id;
         const index = +this.state.index;
 
-        if(this.state.likeCounter){
+        if(this.state.isButtonPushed){
             const updates = {
                 isLiked: this.state.newPost[index][id].data.isLiked,
                 likeCount: this.state.newPost[index][id].data.likeCount,
@@ -115,11 +106,9 @@ class Posts extends Component{
             }
     
             axios.put('https://blog-app-911f4.firebaseio.com/postMaker/' + id + '/data.json', updates)
-            // .then(response => {
-            //     console.log("RES",response);
-            // })
-
-            this.setState({likeCounter: false})
+            .then(response => {
+                this.setState({isButtonPushed: false})
+            })
         }
 
         if(this.state.text !== "" && this.state.commentPosted){
