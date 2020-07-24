@@ -1,0 +1,43 @@
+@-webkit-keyframes HvrIconPulseGrow {
+    to {
+      -webkit-transform: scale(1.3);
+      transform: scale(1.3);
+    }
+  }
+  @keyframes HvrIconPulseGrow {
+    to {
+      -webkit-transform: scale(1.3);
+      transform: scale(1.3);
+    }
+  }
+  .HvrIconPulseGrow {
+    display: inline-block;
+    /* vertical-align: middle; */
+    margin: 15% 30%;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+
+  .HvrIcon{
+    margin: 0.9rem;
+  }
+  .HvrIconPulseGrow .HvrIcon {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .HvrIconPulseGrow:hover .HvrIcon, .HvrIconPulseGrow:focus .HvrIcon, .HvrIconPulseGrow:active .HvrIcon {
+    -webkit-animation-name: HvrIconPulseGrow;
+    animation-name: HvrIconPulseGrow;
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+  }
+  

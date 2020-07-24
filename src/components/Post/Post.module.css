@@ -1,0 +1,53 @@
+.H2{
+    height: 75px;
+    line-height: 75px;
+    font-size: 24px;
+    font-family: 'Merienda One';
+    border-bottom: 2px solid #CDE;
+    color: #522cad;
+    text-align: justify;
+    }
+
+.Para{
+    color: #888;
+    font-size: 18px;
+    margin-top: 2%;
+    }
+
+.Span{
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 935px){
+    .H2{
+        line-height: 75px;
+        font-size: 20px;
+    }
+}
+
+    @media screen and (max-width: 900px){
+        .H2{
+            font-size: 2.3rem;
+            margin-top: -50px;
+            
+
+        }
+
+        .Para{
+            font-size: 1.75rem;
+            margin-bottom: 5%;
+        }
+    }
+
+    @media screen and (max-width: 450px){
+        .H2{
+            font-size: 2.1rem;
+            line-height: 35px;
+        }
+
+        .Para{
+            font-size: 1.75rem;
+            margin: 5% 0;
+        }
+    }

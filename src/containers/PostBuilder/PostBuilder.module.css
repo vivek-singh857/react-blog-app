@@ -1,0 +1,239 @@
+.PostBuilder {
+    margin: 100px auto;
+    width: 60%;
+	text-align: center;
+	background-color:#36454f;
+    border: 1px solid #eee;
+    padding: 10px;
+	box-sizing: border-box;
+	box-shadow: 0 1px 3px rgba(255,223,0,0.12), 0 1px 2px rgba(255,223,0,0.24);
+	transition: all 0.2s ease-in-out;
+	display: block;
+	position: relative;
+	border-radius: 100px;
+
+}
+  .PostBuilder:hover {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
+  .UploadBtnWwrapper {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+  }
+  
+  
+  input[type=file] {
+	font-size: 65%;
+	width: 45%;
+	display: inline-block;
+	margin-right: 5%;
+	margin-left: 15%;
+	padding-left: 7%;
+	
+  }
+  
+  .Input{
+	position: relative;
+	margin: 10% 0;
+  }
+	
+	input{
+	  display: inline-block;
+	  width: 60%;
+	  height: 10%;
+	  font-size: 80%;
+	  background-color: white;
+	  box-sizing: border-box;
+	  outline: none;
+	  border: 1px solid lightgray;
+	  border-radius: 3px;
+	  padding: 3% 3% 3% 15%;
+	  transition: all 0.1s ease-out;
+	}
+	
+	input + label, textarea+label{
+	  position: absolute;
+	  top: 0;
+	  left: 10%;
+	  bottom: 0;
+	  height: 40px;
+	  line-height: 40px;
+	  color: white;
+	  border-radius: 3px 0 0 3px;
+	  padding: 0 2%;
+	  background: crimson;
+	  transform: translateZ(0) translateX(0);
+	  transition: all 0.3s ease-in;
+	  transition-delay: 0.2s;
+	}
+	
+	input:focus + label{
+	  transform: translateY(-120%) translateX(0%);
+	  border-radius: 3px;
+	  transition: all 0.1s ease-out;
+	}
+	
+	input:focus{
+	  padding: 10px;
+	  transition: all 0.3s ease-out;
+	  transition-delay: 0.2s;
+	}
+
+
+	textarea{
+	width:60%;
+	height: 10%;
+	background-color:#FFF;
+	color:#222;
+	font-family:Courier, monospace;
+	font-weight:normal;
+	font-size:2rem;
+	resize:none;
+	line-height:3rem;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:45px;
+	padding-bottom:34px;
+	background-repeat:repeat-y, repeat;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	-webkit-box-shadow: 0px 2px 14px #000;
+	box-shadow: 0px 2px 14px #000;
+	border-top:1px solid #FFF;
+    border-bottom:1px solid #FFF;
+	transition: all 0.1s ease-out;
+	  }
+	  
+	  
+	  textarea:focus + label{
+		transform: translateY(-120%) translateX(0%);
+		border-radius: 3px;
+		transition: all 0.1s ease-out;
+	  }
+	  
+	  textarea:focus{
+		padding: 10px;
+		transition: all 0.3s ease-out;
+		transition-delay: 0.2s;
+	  }
+  
+	  @media screen and (max-width: 900px){
+
+		.PostBuilder {
+			margin: 100px auto;
+			width: 80%;
+		}		
+
+		input[type=file] {
+			margin-left: 10%;
+			padding-left: 5%;
+		}
+
+		.Input{
+			position: relative;
+			margin: 15% 0;
+		  }		
+
+		textarea, input{
+			width: 70%;
+			height: 5%;
+		}
+		textarea + label, input+label{
+			top: 5%;
+			left: 7%;
+		}
+		
+	  }
+
+	  @media screen and (max-width: 550px){
+		.PostBuilder {
+			margin: 100px auto;
+			width: 94%;
+		}
+
+		.Input{
+			position: relative;
+			margin: 20% 0;
+			padding-left: 24%;
+		  }
+
+		  input[type=file] {
+			  margin-left: -10%;
+			  width: 54%;
+		  }
+
+		  input, textarea{
+			width: 95%;
+			height: 10%;
+			margin-left: -25%;
+		}
+
+		input + label, textarea+label {
+			position: absolute;
+			top: 0;
+			left: 5%;
+			font-size: 80%;
+	  }
+
+	
+	}
+
+	  .Button:enabled {
+		border-radius: 4px;
+		background-color: crimson;
+		border: none;
+		color: #FFFFFF;
+		text-align: center;
+		font-size: 70%;
+		padding: 3%;
+		width: 25%;
+		transition: all 0.5s;
+		cursor: pointer;
+		margin: 2%;
+	  }
+	  
+	  .Button i {
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		transition: 0.5s;
+	  }
+	  
+	  .Button i:after {
+		content: '\00bb';
+		position: absolute;
+		opacity: 0;
+		top: 0;
+		right: -20px;
+		transition: 0.5s;
+	  }
+	  
+	  .Button:hover i {
+		padding-right: 25px;
+	  }
+	  
+	  .Button:hover i:after {
+		opacity: 1;
+		right: 0;
+	  }
+
+	  
+  .Button:disabled{
+		background: #dddddd;
+		border-radius: 4px;
+		border: none;
+		color: #FFFFFF;
+		text-align: center;
+		font-size: 70%;
+		padding: 3%;
+		width: 25%;
+		transition: all 0.5s;
+		cursor: pointer;
+		margin: 2%;
+}
+	  
+
+
+
