@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Button from "../../components/UI/Button/Button"
 import classes from "./PostBuilder.module.css";
 import axios from "axios";
-import {storage} from "../../firebase";
+import {storage} from "../../../firebase";
 import PublishTwoToneIcon from '@material-ui/icons/PublishTwoTone';
 import Spinner from "../../components/UI/Spinner/Spinner";
 
